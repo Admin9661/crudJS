@@ -3,12 +3,10 @@ const app = express();
 const PORT = 8000;
 const mongoose = require('mongoose');
 const userRouter = require('./routers/router');
-const path = require('path');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/user', userRouter);
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 require('dotenv').config();
